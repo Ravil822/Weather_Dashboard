@@ -27,105 +27,113 @@
             <div class="card col-md-3" id="search-box">
                 <form class="p-3">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="search">
-                            <button class="btn btn-primary" id = "search_city" type="submit"><i
-                                    class="glyphicon glyphicon-search"></i></button>
+                        <input type="text" class="form-control" placeholder="Search" name="search" id="add-city">
+                        <button class="btn btn-primary" id="search_city" type="submit"><i
+                                class="glyphicon glyphicon-search"></i></button>
                     </div>
 
                 </form>
-                <div class=" cities text-center">
+                <div class="cities-view content-center">
                 </div>
-                
+
             </div>
             <div class="container col-md-8 mr-2 result-box">
                 <div class="row">
                     <div class="container text-center" id="current weather">
                         <h3>Current Weather</h3>
                         <hr>
-                        <div class="current_Weather"></div> 
+                        <div class="current_Weather"></div>
                     </div>
-                    <div id="current-weather"></div>
-                    
+                    <div id="current-weather">
+                        <p>
+                            current temperature: <Span id="current-temp"></Span>
+
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
         </div>
-        <br><hr>
+        <br>
+        <hr>
 
         <div class="row">
             <div class="container text-center" id="current weather">
                 <h3>5-Days Forecast</h3>
             </div>
-    <div class="row">
-        <div class="col-sm five-days">
-            <div class="card">
-                <div class="card-header">
-            Day 1
-         </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                            a ante.</p>
+            <div class="row">
+                <div class="col-sm five-days">
+                    <div class="card">
+                        <div class="card-header">
+                            Day 1
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                                    a ante.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm five-days">
-            <div class="card">
-                <div class="card-header">
-                        Day 2
+                <div class="col-sm five-days">
+                    <div class="card">
+                        <div class="card-header">
+                            Day 2
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                                    a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                            a ante.</p>
-                    </blockquote>
+                <div class="col-sm five-days">
+                    <div class="card">
+                        <div class="card-header">
+                            Day 3
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                                    a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm five-days">
-            <div class="card">
-                <div class="card-header">
-                    Day 3
+                <div class="col-sm five-days">
+                    <div class="card">
+                        <div class="card-header">
+                            Day 4
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                                    a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                            a ante.</p>
-                    </blockquote>
+                <div class="col-sm five-days">
+                    <div class="card">
+                        <div class="card-header" id>
+                            Day 5
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                                    a ante.</p>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm five-days">
-            <div class="card">
-                <div class="card-header">
-                        Day 4
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                            a ante.</p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm five-days">
-            <div class="card">
-                <div class="card-header" id>
-                        Day 5
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                            a ante.</p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
 
+            </div>
+
+        </div>
     </div>
 
 
-    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
