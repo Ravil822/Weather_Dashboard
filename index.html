@@ -8,6 +8,7 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -27,94 +28,101 @@
                 <form class="p-3">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" name="search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary" type="submit"><i
+                            <button class="btn btn-primary" id = "search_city" type="submit"><i
                                     class="glyphicon glyphicon-search"></i></button>
-                        </div>
                     </div>
+
                 </form>
+                <div class=" cities text-center">
+                </div>
+                
             </div>
             <div class="container col-md-8 mr-2 result-box">
                 <div class="row">
                     <div class="container text-center" id="current weather">
                         <h3>Current Weather</h3>
+                        <hr>
+                        <div class="current_Weather"></div> 
                     </div>
                     <div id="current-weather"></div>
-                    <div class="row">
-                            <div class="container text-center" id="current weather">
-                                <h3>5-Days Forecast</h3>
-                            </div>
-                    <div class="row">
-                        <div class="col-sm five-days">
-                            <div class="card">
-                                <div class="card-header">
-                            Day 1
-                         </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                            a ante.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm five-days">
-                            <div class="card">
-                                <div class="card-header">
-                                        Day 1
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                            a ante.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm five-days">
-                            <div class="card">
-                                <div class="card-header">
-                                    Quote
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                            a ante.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm five-days">
-                            <div class="card">
-                                <div class="card-header">
-                                        Day 1
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                            a ante.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm five-days">
-                            <div class="card">
-                                <div class="card-header">
-                                        Day 1
-                                </div>
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                            a ante.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                 </div>
             </div>
 
         </div>
+        <br><hr>
+
+        <div class="row">
+            <div class="container text-center" id="current weather">
+                <h3>5-Days Forecast</h3>
+            </div>
+    <div class="row">
+        <div class="col-sm five-days">
+            <div class="card">
+                <div class="card-header">
+            Day 1
+         </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                            a ante.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm five-days">
+            <div class="card">
+                <div class="card-header">
+                        Day 2
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                            a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm five-days">
+            <div class="card">
+                <div class="card-header">
+                    Day 3
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                            a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm five-days">
+            <div class="card">
+                <div class="card-header">
+                        Day 4
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                            a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm five-days">
+            <div class="card">
+                <div class="card-header" id>
+                        Day 5
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+                            a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
     </div>
