@@ -52,6 +52,7 @@
 
     // Set cities buttons
     var cities = [""];
+    var date = moment();
     function displayWheater() {
         var citiname = $(this).attr("data-name")
             var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + citiname + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
@@ -59,9 +60,55 @@
                 url: queryURL,
                 method: "GET"
             }).then(function (response){
-                console.log(response);
-                $("#city_name")= val(response.name);
-            })
+                console.log(response)
+                //append city name and date
+                $("#city_name").empty();
+                $("#current-temp").empty();
+                $("#current-humi").empty();
+                $("#current-wind").empty();
+                $("#uv_index").empty();
+
+
+                var citydiv = $("#city_name")
+                var currentDate = date.format("(MM/DD/YYYY)")
+                var city = response.name + " "
+                citydiv.append([city, currentDate]);
+                // append temperature
+                var tempDiv = $("#current-temp");
+                var temp ="Temperature: " + response.main.temp + " °F"
+                tempDiv.append(temp)
+                // append humidity
+                var humiDiv = $("#current-humi");
+                var humi ="Humidity: " + response.main.humidity + " %";
+                humiDiv.append(humi);
+                // append wind speed
+                var windDiv = $("#current-wind");
+                var wind = "Wind Speed: " + response.wind.speed + " MPH";
+                windDiv.append(wind);
+
+                // append uv index
+                        // make api call to get the index
+                var UVqueryURL ="https://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=246a9515c97ecb38ae4f2f7717982a0e";
+                $.ajax({
+                    url: UVqueryURL,
+                    method: "GET"
+                }).then(function(response){
+                        // append the index
+                    var uvDiv = $("#uv_index");
+                    var uv = "UV index: " + response.value;
+                    uvDiv.append(uv);
+
+                });
+
+                // make another call to the api to get 5 days forecast
+                
+
+
+            
+
+
+            
+            });
 
         
         
