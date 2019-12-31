@@ -3,7 +3,7 @@ var cities = [];
 var date = moment();
 function displayWheater() {
     var citiname = $(this).attr("data-name")
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + citiname + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citiname + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -55,7 +55,7 @@ function displayWheater() {
 
         });
 
-        var queryURL5D = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
+        var queryURL5D = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
         $.ajax({
             url: queryURL5D,
             method: "GET"
