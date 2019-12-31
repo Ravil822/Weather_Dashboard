@@ -210,19 +210,19 @@ $("#search_city").on("click", function (event) {
     
 });
 
-function previouslySearched(){
-    $(".cities-view").empty()
+// function previouslySearched(){
+//     $(".cities-view").empty()
 
-var prevCities = JSON.parse(localStorage.getItem("City-list"));
-console.log(prevCities)
-for (var i = 0; i <prevCities.length; i++){
-    var b = $("<div>");
-    b.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
-    b.attr("data-name", prevCities[i]);
-    b.text(prevCities[i]);
-    $(".cities-view").prepend(b);}
-}
-previouslySearched()
+// var prevCities = JSON.parse(localStorage.getItem("City-list"));
+// console.log(prevCities)
+// for (var i = 0; i <prevCities.length; i++){
+//     var b = $("<div>");
+//     b.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
+//     b.attr("data-name", prevCities[i]);
+//     b.text(prevCities[i]);
+//     $(".cities-view").prepend(b);}
+// }
+// previouslySearched()
 
 $(document).on("click", ".city", displayWheater);
 
