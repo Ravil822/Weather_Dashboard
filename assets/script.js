@@ -1,26 +1,5 @@
-function renderButtons() {
-    $(".cities-view").empty()
-    for (var i = 1; i < cities.length; i++) {
-        var a = $("<div>");
-        a.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
-        a.attr("data-name", cities[i]);
-        a.text(cities[i]);
-        $(".cities-view").prepend(a);
-    }
 
-};
-
-$("#search_city").on("click", function (event) {
-    event.preventDefault();
-    var city = $("#add-city").val().trim();
-    cities.push(city);
-    localStorage.setItem("City-list", JSON.stringify(cities));
-    renderButtons();
-});
-
-
-
-var cities = [""];
+var cities = [];
 var date = moment();
 function displayWheater() {
     var citiname = $(this).attr("data-name")
@@ -36,6 +15,7 @@ function displayWheater() {
         $("#current-humi").empty();
         $("#current-wind").empty();
         $("#uv_index").empty();
+        $("#index").empty();
 
 
         var citydiv = $("#city_name")
@@ -66,9 +46,12 @@ function displayWheater() {
             method: "GET"
         }).then(function (response) {
             // append the index
-            var uvDiv = $("#uv_index").addClass("btn btn-danger");
-            var uv = "UV index: " + response.value
-            uvDiv.append(uv);
+            var uvDiv = $("#uv_index");
+            var indexDiv = $("#index");
+            var index = response.value
+            uvDiv.append("UV index: ");
+            indexDiv.append(index)
+            
 
         });
 
@@ -195,11 +178,55 @@ function displayWheater() {
             });
 
     });
-    
+
+
 };
 
 
+
+
+function renderButtons() {
+    $(".cities-view").empty()
+    for (var i = 0; i < cities.length; i++) {
+        var a = $("<div>");
+        a.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
+        a.attr("data-name", cities[i]);
+        a.text(cities[i]);
+        $(".cities-view").prepend(a);
+        localStorage.setItem("Cities", JSON.stringify)
+        
+        
+    }
+
+};
+
+
+$("#search_city").on("click", function (event) {
+    event.preventDefault();
+    var city = $("#add-city").val().trim();
+    cities.push(city);
+    renderButtons();
+    localStorage.setItem("City-list", JSON.stringify(cities))
+    
+});
+
+function previouslySearched(){
+    $(".cities-view").empty()
+
+var prevCities = JSON.parse(localStorage.getItem("City-list"));
+console.log(prevCities)
+for (var i = 0; i <prevCities.length; i++){
+    var b = $("<div>");
+    b.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
+    b.attr("data-name", prevCities[i]);
+    b.text(prevCities[i]);
+    $(".cities-view").prepend(b);}
+}
+previouslySearched()
+
 $(document).on("click", ".city", displayWheater);
+
+    // Create click event with api request
 
 
 
