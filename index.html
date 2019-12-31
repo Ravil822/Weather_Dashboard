@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body>
+    <header class="p-3 mb-2 bg-secondary text-white">
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="row text-center">
+            <h4 class="col-md-3 mb-3">Search for the City:</h4>
+        </div>
+        <div class="row">
+            <div class="card col-md-3" id="search-box">
+                <form class="p-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="search" id="add-city">
+                        <button class="btn btn-primary" id="search_city" type="submit"><i
+                                class="glyphicon glyphicon-search"></i></button>
+                    </div>
+
+                </form>
+                <div class="cities-view content-center">
+                </div>
+
+            </div>
+            <div class="container col-md-8 mr-2 result-box">
+                <div class="row">
+                    <div class="container text-center" id="current weather">
+                        <h3>Current Weather</h3>
+                        <hr>
+                        <div class="current_Weather"></div>
+                    </div>
+                    <div class="ml-5" id="current-weather mb-2">
+                        <h1><Span id="city_name"></Span></h1>
+                        <br>
+                        <h4><Span id="current-temp"></Span> </h4>
+                        <br>
+                        <h4> <Span id="current-humi"></Span> </h4>
+                        <br>
+                        <h4> <Span id="current-wind"></Span> </h4>
+                        <br>
+                        <h4><Span id="uv_index"></Span><Span type="button" class="btn-danger" id="index"></Span> </h4>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <hr>
+
+        <div class="row">
+            <div class="container text-center" id="current weather">
+                <h3>5-Days Forecast</h3>
+            </div>   
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm five-days">
+                <div class="card">
+                    <h3>
+                        <div class="card-header text-center" id="day_1">
+                        </div>
+                    </h3>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <div id="pic_1"></div>
+                            <h4><Span id="current-temp1"></Span> </h4>
+                            <br>
+                            <h4> <Span id="current-humi1"></Span> </h4>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm five-days">
+                <div class="card">
+                    <h3>
+                        <div class="card-header text-center" id="day_2">
+                        </div>
+                    </h3>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <div id="pic_2"></div>
+                            <h4><Span id="current-temp2"></Span> </h4>
+                            <br>
+                            <h4> <Span id="current-humi2"></Span> </h4>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm five-days">
+                <div class="card">
+                    <h3>
+                        <div class="card-header text-center" id="day_3">
+                        </div>
+                    </h3>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <div id="pic_3"></div>
+                            <h4><Span id="current-temp3"></Span> </h4>
+                            <br>
+                            <h4> <Span id="current-humi3"></Span> </h4>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm five-days">
+                <div class="card">
+                    <h3>
+                        <div class="card-header text-center" id="day_4">
+                        </div>
+                    </h3>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <div id="pic_4"></div>
+                            <h4><Span id="current-temp4"></Span> </h4>
+                            <br>
+                            <h4> <Span id="current-humi4"></Span> </h4>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm five-days">
+                <div class="card">
+                    <h3>
+                        <div class="card-header text-center" id="day_5">
+                        </div>
+                    </h3>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <div id="pic_5"></div>
+                            <h4><Span id="current-temp5"></Span> </h4>
+                            <br>
+                            <h4> <Span id="current-humi5"></Span> </h4>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
