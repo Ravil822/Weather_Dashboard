@@ -12,7 +12,7 @@ https://ravil822.github.io/Weather_Dashboard/
 
 
 # Demo
-<img alt="Demo" src="assets/pictures/Screenshot(130)png>
+<img alt="Demo" src="assets/pictures/Screenshot(130).png>
 
 
 
