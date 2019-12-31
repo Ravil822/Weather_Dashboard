@@ -143,7 +143,7 @@ function displayWheater() {
             $("#pic_4").empty()
             var picIndex4 = response.list[28].weather[0].icon
             var picURL4 = "https://openweathermap.org/img/w/" + picIndex4 + ".png"
-            var pic4 = $("<img>").attr("src", picURL1)
+            var pic4 = $("<img>").attr("src", picURL4)
             var picDiv4 = $("#pic_4")
             picDiv4.append(pic4);
 
@@ -161,7 +161,7 @@ function displayWheater() {
             $("#pic_5").empty()
             var picIndex5 = response.list[36].weather[0].icon
             var picURL5 = "https://openweathermap.org/img/w/" + picIndex5 + ".png"
-            var pic5 = $("<img>").attr("src", picURL1)
+            var pic5 = $("<img>").attr("src", picURL5)
             var picDiv5 = $("#pic_5")
             picDiv5.append(pic5);
 
