@@ -1,14 +1,16 @@
 
-var cities = [];
+var cities = JSON.parse(localStorage.getItem("city-list")) || [];
 var date = moment();
-function displayWheater() {
-    var citiname = $(this).attr("data-name")
+
+function displayWheater(city) {
+    var citiname = city
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citiname + "&units=imperial&appid=246a9515c97ecb38ae4f2f7717982a0e";
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
+
         //append city name and date
         $("#city_name").empty();
         $("#current-temp").empty();
@@ -17,7 +19,6 @@ function displayWheater() {
         $("#uv_index").empty();
         $("#index").empty();
 
-
         var citydiv = $("#city_name")
         var picIndex = response.weather[0].icon
         var picURL = "https://openweathermap.org/img/w/" + picIndex + ".png"
@@ -25,21 +26,23 @@ function displayWheater() {
         var currentDate = date.format("(MM/DD/YYYY)")
         var city = response.name + " "
         citydiv.append([city, currentDate,pic]);
+
         // append temperature
         var tempDiv = $("#current-temp");
         var temp = "Temperature: " + response.main.temp + " °F"
         tempDiv.append(temp)
+
         // append humidity
         var humiDiv = $("#current-humi");
         var humi = "Humidity: " + response.main.humidity + " %";
         humiDiv.append(humi);
+
         // append wind speed
         var windDiv = $("#current-wind");
         var wind = "Wind Speed: " + response.wind.speed + " MPH";
         windDiv.append(wind);
 
         // append uv index
-        // make api call to get the index
         var UVqueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=246a9515c97ecb38ae4f2f7717982a0e";
         $.ajax({
             url: UVqueryURL,
@@ -51,7 +54,6 @@ function displayWheater() {
             var index = response.value
             uvDiv.append("UV index: ");
             indexDiv.append(index)
-            
 
         });
 
@@ -93,7 +95,8 @@ function displayWheater() {
             var picDiv1 = $("#pic_1")
             picDiv1.append(pic1);
 
-            $("#current-temp1").empty(); $("#current-humi1").empty() 
+            $("#current-temp1").empty(); 
+            $("#current-humi1").empty() 
             var tempDiv1 = $("#current-temp1");
             var temp1 = "Temp: " + response.list[4].main.temp + " °F"
             tempDiv1.append(temp1)
@@ -182,56 +185,48 @@ function displayWheater() {
 
 };
 
-
-
-
 function renderButtons() {
+
     $(".cities-view").empty()
+
     for (var i = 0; i < cities.length; i++) {
         var a = $("<div>");
         a.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
         a.attr("data-name", cities[i]);
         a.text(cities[i]);
-        $(".cities-view").prepend(a);
-        localStorage.setItem("Cities", JSON.stringify)
-        
-        
+        $(".cities-view").prepend(a);        
     }
 
 };
 
-
 $("#search_city").on("click", function (event) {
     event.preventDefault();
+
     var city = $("#add-city").val().trim();
+
+    if (!city){
+        return false
+    }
+
     cities.push(city);
+    localStorage.setItem("city-list", JSON.stringify(cities))
+
     renderButtons();
-    localStorage.setItem("City-list", JSON.stringify(cities))
-    
+    displayWheater(city)
+
+    $("#add-city").val("");
+
 });
 
 function previouslySearched(){
-    $(".cities-view").empty()
-
-var prevCities = JSON.parse(localStorage.getItem("City-list"));
-console.log(prevCities)
-for (var i = 0; i <prevCities.length; i++){
-    var b = $("<div>");
-    b.addClass("city btn btn-primary d-block mb-1 mr-auto ml-auto");
-    b.attr("data-name", prevCities[i]);
-    b.text(prevCities[i]);
-    $(".cities-view").prepend(b);}
+var lastCity = cities[cities.length -1]
+console.log(lastCity);
+displayWheater(lastCity);
+renderButtons()
 }
 
-$(document).on("click", ".city", displayWheater);
-previouslySearched()
-
-
-
-
-
-
-
-
-
-
+$(document).on("click", ".city", function(){
+    displayWheater($(this).attr("data-name"))
+    
+})
+previouslySearched();

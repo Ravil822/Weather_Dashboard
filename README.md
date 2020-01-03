@@ -7,6 +7,11 @@ The app stored user search history in the local storoge. If the user refresh the
 
 # Repository access link
 
+https://github.com/Ravil822/Weather_Dashboard
+
+
+# Life version link
+
 https://ravil822.github.io/Weather_Dashboard/
 
 
